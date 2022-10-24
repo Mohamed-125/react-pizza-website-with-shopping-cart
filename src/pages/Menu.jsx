@@ -19,6 +19,14 @@ const Menu = ({}) => {
   }, [products]);
 
   const [isCartOpen, setIsCartOpen] = useState(false);
+  useEffect(() => {
+    if (isCartOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isCartOpen]);
+
   const addToCartHandler = (name, price, img, id) => {
     setProducts((pre) => {
       return [
@@ -63,24 +71,33 @@ const Menu = ({}) => {
     <div className="container relative  xs:!px-[10px]">
       <div
         style={{
+          translate: isCartOpen ? "0%" : "100%",
+          transition: "0.5s all ease",
           zIndex: "10000",
-          animation: `${
-            isCartOpen ? "nav-open-animation 0.2s" : "nav-close-animation 0.2s"
-          }`,
         }}
         className={`${
-          isCartOpen ? "mobile-nav-div-opened  " : "mobile-nav-div-closed"
-        } h-full flex  max-w-[750px] w-[70%] top-[0px] right-0 translate-x-[100%]  bg-black text-white text-xl fixed `}
+          isCartOpen ? "mobile-nav-div-opened" : "mobile-nav-div-closed"
+        } h-full flex w-[70%] xs:w-[100%] top-[0px] right-0 cart-div   bg-black text-white text-xl fixed `}
       >
-        {" "}
-        <button
-          onClick={() => {
-            setIsCartOpen(false);
-          }}
-          className="text-xl bg-white h-fit absolute top-[40px] z-[10000] left-4 text-black px-2 py-2"
-        >
-          Close Cart
-        </button>
+        <div className="flex justify-between">
+          <button
+            onClick={() => {
+              setIsCartOpen(false);
+            }}
+            className="text-xl bg-white h-fit absolute top-[40px] z-[10000] left-4 text-black px-2 py-2"
+          >
+            Close Cart
+          </button>
+          <button
+            onClick={() => {
+              setProducts([]);
+            }}
+            className="text-xl bg-white h-fit absolute top-[40px] z-[10000] right-4 text-black px-2 py-2"
+          >
+            Reset
+          </button>
+        </div>
+
         <div className="py-[25px] overflow-auto    w-full px-[10px] mt-[89px] flex flex-col break-words gap-7">
           {products.length > 0 ? (
             products.map((product) => {

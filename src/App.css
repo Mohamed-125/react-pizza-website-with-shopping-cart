@@ -53,34 +53,6 @@ body {
   top: -13px;
 }
 
-.mobile-nav-div-closed {
-  direction: rtl;
-  display: none;
-  transform: translate(100%);
-}
-
-.mobile-nav-div-opened {
-  direction: rtl;
-  transform: translate(0%);
-}
-
-@keyframes nav-close-animation {
-  from {
-    transform: translate(0%);
-  }
-  to {
-    transform: translate(100%);
-  }
-}
-@keyframes nav-open-animation {
-  from {
-    transform: translate(100%);
-  }
-  to {
-    transform: translate(0%);
-  }
-}
-
 .button {
   transition: 0.3s all ease;
 }
@@ -89,15 +61,6 @@ body {
   scale: 1.05;
   background-color: rgb(15, 15, 15);
 }
-/* ::-webkit-scrollbar {
-  width: 14px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(0, 0, 0);
-  height: 90px !important;
-} */
 
 .cart-icon::before {
   content: attr(data-cart-products);

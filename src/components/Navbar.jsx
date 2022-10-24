@@ -48,16 +48,13 @@ const Navbar = ({
         </div>
         <div
           style={{
-            backgroundColor: `${navbg}`,
-            color: `${navTextColor}`,
+            translate: isNavOpen ? "0%" : "100%",
+            transition: "0.3s all ease",
             zIndex: "100",
-            animation: `${
-              isNavOpen ? "nav-open-animation 0.2s" : "nav-close-animation 0.2s"
-            }`,
           }}
           className={`${
             isNavOpen ? "mobile-nav-div-opened" : "mobile-nav-div-closed"
-          } h-full md:flex hidden w-[70%] top-[0px] right-0 translate-x-[100%] bg-white text-xl fixed `}
+          } h-full flex w-[70%] top-[0px] right-0 cart-div   bg-black text-white text-xl fixed `}
         >
           <div className="py-[25px] px-[50px] mt-[89px] flex flex-col break-words gap-7">
             {NavLinks.map((link) => (
