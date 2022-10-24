@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-pizza-website-with-shopping-cart/static/css/main.724f4df2.css",
-    "main.js": "/react-pizza-website-with-shopping-cart/static/js/main.137ecc8e.js",
+    "main.css": "/react-pizza-website-with-shopping-cart/static/css/main.3a466571.css",
+    "main.js": "/react-pizza-website-with-shopping-cart/static/js/main.b80f8c47.js",
     "index.html": "/react-pizza-website-with-shopping-cart/index.html",
-    "main.724f4df2.css.map": "/react-pizza-website-with-shopping-cart/static/css/main.724f4df2.css.map",
-    "main.137ecc8e.js.map": "/react-pizza-website-with-shopping-cart/static/js/main.137ecc8e.js.map"
+    "main.3a466571.css.map": "/react-pizza-website-with-shopping-cart/static/css/main.3a466571.css.map",
+    "main.b80f8c47.js.map": "/react-pizza-website-with-shopping-cart/static/js/main.b80f8c47.js.map"
   },
   "entrypoints": [
-    "static/css/main.724f4df2.css",
-    "static/js/main.137ecc8e.js"
+    "static/css/main.3a466571.css",
+    "static/js/main.b80f8c47.js"
   ]
 }
