@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-pizza-website-with-shopping-cart/static/css/main.724f4df2.css",
+    "main.js": "/react-pizza-website-with-shopping-cart/static/js/main.137ecc8e.js",
+    "index.html": "/react-pizza-website-with-shopping-cart/index.html",
+    "main.724f4df2.css.map": "/react-pizza-website-with-shopping-cart/static/css/main.724f4df2.css.map",
+    "main.137ecc8e.js.map": "/react-pizza-website-with-shopping-cart/static/js/main.137ecc8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.724f4df2.css",
+    "static/js/main.137ecc8e.js"
+  ]
+}
