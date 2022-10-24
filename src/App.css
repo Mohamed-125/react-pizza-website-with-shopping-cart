@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+body {
+  background-color: rgb(230, 230, 230);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  -webkit-tap-highlight-color: transparent;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-center-center {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
+.mobile-hamburger-div-opened {
+  position: relative;
+  top: 6.5px;
+}
+.mobile-hamburger-div-closed span {
+  transition: 0.2s all ease;
+}
+
+.mobile-hamburger-div-opened span {
+  transition: 0.2s all ease;
+}
+.mobile-hamburger-div-opened span:first-child {
+  rotate: 45deg;
+  position: relative;
+}
+.mobile-hamburger-div-opened span:nth-child(2) {
+  display: none;
+}
+.mobile-hamburger-div-opened span:last-child {
+  rotate: -45deg;
+  position: relative;
+  top: -13px;
+}
+
+.mobile-nav-div-closed {
+  direction: rtl;
+  display: none;
+  transform: translate(100%);
+}
+
+.mobile-nav-div-opened {
+  direction: rtl;
+  transform: translate(0%);
+}
+
+@keyframes nav-close-animation {
   from {
-    transform: rotate(0deg);
+    transform: translate(0%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(100%);
+  }
+}
+@keyframes nav-open-animation {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+.button {
+  transition: 0.3s all ease;
+}
+
+.button:hover {
+  scale: 1.05;
+  background-color: rgb(15, 15, 15);
+}
+/* ::-webkit-scrollbar {
+  width: 14px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  height: 90px !important;
+} */
+
+.cart-icon::before {
+  content: attr(data-cart-products);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  position: absolute;
+  bottom: -10px;
+  right: -4px;
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
