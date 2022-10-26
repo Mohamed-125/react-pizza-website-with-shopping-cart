@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { motion } from "framer-motion";
 
 const Pizza = ({ name, img, price, products, setProducts, id }) => {
   const addToCartHandler = () => {
@@ -53,30 +54,43 @@ const Pizza = ({ name, img, price, products, setProducts, id }) => {
     }
   };
 
+  const divAnimate = {
+    offscreen: { x: 200, opacity: 0 },
+    onscreen: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+  };
   return (
-    <div
-      id={id}
-      className="flex gap-9 h-[280px] sm:h-fit sm:flex-col sm:gap-4 border-[2px] bg-white border-gray-700 my-7 items-center"
-    >
-      <div
-        className="max-w-[235px] sm:w-full sm:max-w-none min-h-[240px] h-full flex-1 bg-center bg-cover"
-        style={{
-          backgroundImage: `url(${img})`,
-        }}
-      />
-      <div className=" pb-4 px-3">
-        <h3 className="text-3xl mb-4 xs:text-2xl">{name}</h3>
-        <p className="text-xl mb-4">${price}</p>
-        {!products.find((product) => product.name === name) ? (
-          <Button text="Add To Cart" onClick={addToCartHandler} />
-        ) : (
-          <div className="flex items-center gap-3">
-            <button onClick={addToCartHandler}>+</button>
-            <p>{products.find((product) => product.name === name).quantity}</p>
-            <button onClick={decreaseQuantityHandler}>-</button>
-          </div>
-        )}{" "}
-      </div>
+    <div className="overflow-hidden max-w-screen">
+      <motion.div
+        id={id}
+        initial={"offscreen"}
+        whileInView="onscreen"
+        exit={"offscreen"}
+        variants={divAnimate}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex max-w-screen  gap-9 h-[280px] sm:h-fit sm:flex-col sm:gap-4 border-[2px] bg-white border-gray-700 my-7 items-center"
+      >
+        <div
+          className="max-w-[235px] sm:w-full sm:max-w-none min-h-[240px] h-full flex-1 bg-center bg-cover"
+          style={{
+            backgroundImage: `url(${img})`,
+          }}
+        />
+        <div className=" pb-4 px-3">
+          <h3 className="text-3xl mb-4 xs:text-2xl">{name}</h3>
+          <p className="text-xl mb-4">${price}</p>
+          {!products.find((product) => product.name === name) ? (
+            <Button text="Add To Cart" onClick={addToCartHandler} />
+          ) : (
+            <div className="flex items-center gap-3">
+              <button onClick={addToCartHandler}>+</button>
+              <p>
+                {products.find((product) => product.name === name).quantity}
+              </p>
+              <button onClick={decreaseQuantityHandler}>-</button>
+            </div>
+          )}{" "}
+        </div>
+      </motion.div>
     </div>
   );
 };
